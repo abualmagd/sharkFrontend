@@ -1,15 +1,25 @@
 
-import React  from 'react';
+import React from 'react';
 import SideBar from './SideBar';
-import Home  from './Home';
-export default function DashBoard(){
+import {Grid}   from "@mui/material";
+import Home from './Home';
 
-    return(
-        <div className='Wrapper' style={{display:"flex",color:"red",gap:"10px"}}>
-            <SideBar></SideBar>
-            <Home/>
-            <div>right post part </div>
-        </div>
+export default function DashBoard() {
+
+    return (
+
+
+        <Grid container spacing={3} sx={{position:"relative"}}>
+            <Grid item xs={2} >
+                <SideBar/>
+            </Grid>
+            <Grid item xs={10}  md={7}>
+                <Home/>
+            </Grid>
+            <Grid item xs={0} sm={0} md={4} lg={3} >
+                <p  >this right</p>
+            </Grid>
+        </Grid>
     );
 
 }

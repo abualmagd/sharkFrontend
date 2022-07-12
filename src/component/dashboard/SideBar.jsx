@@ -1,4 +1,4 @@
-import { List, Box, ListItem, Typography, Divider, ListItemButton, ListItemIcon, ListItemText, Toolbar } from "@mui/material";
+import { List, Box, ListItem, Typography, Divider, ListItemButton, ListItemIcon, ListItemText, Toolbar, Container } from "@mui/material";
 import * as React from "react";
 import SettingsApplicationsTwoToneIcon from '@mui/icons-material/SettingsApplicationsTwoTone';
 import CalendarViewMonthTwoToneIcon from '@mui/icons-material/CalendarViewMonthTwoTone';
@@ -47,13 +47,13 @@ function SideBar() {
 
 
     const sideBar = (
-        <div  >
+        <Container  disableGutters  sx={{display:"flex",position:"fixed"}}>
             <Box sx={{ bgcolor: "#282928", height: "100vh", alignContent: "center"  }}>
 
-                <List sx={{width: {md:barWidth ,sm:"58px",xs:"58px"},overflow:"hidden"}} >
+                <List sx={{width: {lg:barWidth, md:"58px" ,sm:"58px",xs:"58px"},overflow:"hidden"}} >
                     <ListItem >
                         <ListItemIcon>
-                            <LocalFireDepartmentTwoToneIcon sx={{ fontWeight: "400", margin: {md:"auto"}, padding: "2px", fontSize: "1.5em", bgcolor: "#C2F7F9", borderRadius: "5px" }}/>
+                            <LocalFireDepartmentTwoToneIcon sx={{ fontWeight: "400", margin: {lg:"auto"}, padding: "2px", fontSize: "1.5em", bgcolor: "#C2F7F9", borderRadius: "5px" }}/>
                         </ListItemIcon>
                         <Toolbar height={"10px"} disableGutters>
                             <Typography   marginTop={"5px"} variant={"h5"} fontFamily={"Roboto"} fontWeight={"500"} color="#F7FAF8">
@@ -156,12 +156,14 @@ function SideBar() {
 
                 </List>
             </Box>
-
-        </div>
+            
+            
+          
+        </Container>
     );
 
     return (
-        <div>
+        <div >
             {sideBar}
         </div>
     );
